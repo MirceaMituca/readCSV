@@ -20,7 +20,7 @@ public class CompetitionResults {
         }
     }
 
-    public List<Athlete> parseStringList(List<String> stringList, boolean hasHeaderRow) {
+    public static List<Athlete> parseStringList(List<String> stringList, boolean hasHeaderRow) {
         List<Athlete> athletes = new ArrayList<>();
         for (int i = hasHeaderRow ? 1 : 0; i < stringList.size(); i++) {
             String currentLine = stringList.get(i);
@@ -31,7 +31,7 @@ public class CompetitionResults {
         return athletes;
     }
 
-        private Athlete createAthlete (String[]elements){
+        private static Athlete createAthlete(String[] elements){
             return new Athlete(
                     Integer.parseInt(elements[0]),
                     elements[1],
@@ -44,7 +44,7 @@ public class CompetitionResults {
 
         }
 
-    public List<Athlete> sortAthletesByFinalTime(List<Athlete> athletes) {
+    public static List<Athlete> sortAthletesByFinalTime(List<Athlete> athletes) {
         Collections.sort(athletes);
         return athletes;
     }
